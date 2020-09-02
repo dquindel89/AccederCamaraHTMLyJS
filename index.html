@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video id="vid" autoplay></video>
+
+    <script>
+      navigator.mediaDevices.getUserMedia({
+            video: {
+                height:500,
+                width:400,
+                resizeMode:100, 
+                sampleRate: 6,
+                sampleSize: 6
+                
+            }
+        })
+        .then(stream =>{
+            document.getElementById("vid").srcObject = stream;
+        })
+    </script>
+</body>
+</html>
